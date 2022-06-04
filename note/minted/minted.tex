@@ -1,0 +1,58 @@
+\documentclass[a4paper]{ctexart}    %ctexart, article
+\usepackage[margin=1cm]{geometry}
+\usepackage{amsmath, mathrsfs, amsfonts}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+
+
+\begin{document}
+\section{minted 编译命令}
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{bash}
+xelatex -shell--escape **.tex
+\end{minted}
+
+\section{行代码快}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{tex}
+
+  \mintinline{python}{import pandas as pd}
+\end{minted}
+\section{代码块环境}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{tex}
+\begin{mintedenv}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{python}
+
+import pandas as pd
+import re
+import json
+\end{mintedenv}
+
+\end{minted}
+
+
+\end{document}
+

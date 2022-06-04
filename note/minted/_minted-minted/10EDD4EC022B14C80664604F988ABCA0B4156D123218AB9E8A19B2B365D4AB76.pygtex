@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{\PYGZbs{}mintinline}\PYG{n+nb}{\PYGZob{}}python\PYG{n+nb}{\PYGZcb{}\PYGZob{}}import pandas as pd\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

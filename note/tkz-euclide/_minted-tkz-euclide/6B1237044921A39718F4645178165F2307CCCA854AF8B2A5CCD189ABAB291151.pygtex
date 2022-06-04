@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}scope\PYG{n+nb}{\PYGZcb{}}[xshift=6cm]
+        \PYG{k}{\PYGZbs{}node} at (.5,\PYGZhy{}1.5)\PYG{n+nb}{\PYGZob{}}tkzeuclide\PYG{n+nb}{\PYGZcb{}};
+    \PYG{k}{\PYGZbs{}tkzDefPoints}\PYG{n+nb}{\PYGZob{}}0/0/A,1/0/B\PYG{n+nb}{\PYGZcb{}}     \PYG{c}{\PYGZpc{} 定义多个点}
+    \PYG{k}{\PYGZbs{}tkzDrawSegments}(A,B)          \PYG{c}{\PYGZpc{} 绘制线段}
+    \PYG{k}{\PYGZbs{}tkzLabelPoints}\PYG{n+na}{[below]}(A,B)    \PYG{c}{\PYGZpc{} 绘制标签}
+    \PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}scope\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}
