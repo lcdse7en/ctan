@@ -6,23 +6,32 @@
 \usepackage{pgfplots}
 \usepackage{xcolor}
 \usepackage{minted}
+\usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 
 
 \begin{document}
-\section{minted 编译命令}
-
+\begin{tcolorbox}[
+         colback=red!5!white,
+         colframe=teal,
+         title=\textbf{minted compile order}
+    ]
 \begin{minted}[mathescape,
                linenos,
                numbersep=5pt,
                gobble=2,
                frame=lines,
-               framesep=2mm]{bash}
-xelatex -shell--escape **.tex
+               framesep=2mm]{csharp}
+xelatex -shell-escape **.tex
 \end{minted}
+\end{tcolorbox}
 
-\section{行代码快}
+\begin{tcolorbox}[
+         colback=red!5!white,
+         colframe=teal,
+         title=\textbf{line code}
+    ]
 \begin{minted}[mathescape,
                linenos,
                numbersep=5pt,
@@ -32,7 +41,13 @@ xelatex -shell--escape **.tex
 
   \mintinline{python}{import pandas as pd}
 \end{minted}
-\section{代码块环境}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+         colback=red!5!white,
+         colframe=teal,
+         title=\textbf{code env}
+    ]
 \begin{minted}[mathescape,
                linenos,
                numbersep=5pt,
@@ -40,18 +55,17 @@ xelatex -shell--escape **.tex
                frame=lines,
                framesep=2mm]{tex}
 \begin{mintedenv}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{python}
-
+                  linenos,
+                  numbersep=5pt,
+                  gobble=0,
+                  frame=lines,
+                  framesep=2mm]{python}
 import pandas as pd
 import re
 import json
 \end{mintedenv}
-
 \end{minted}
+\end{tcolorbox}
 
 
 \end{document}

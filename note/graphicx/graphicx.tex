@@ -5,15 +5,12 @@
 \usepackage{amsmath, mathrsfs, amsfonts}
 \usepackage{amssymb} % 更多公式符号
 \usepackage{physics} % 公式输入便捷命令
-\usepackage{xcolor}
-\usepackage[
-            colorlinks=true,
-            allcolors=Navy
-]{hyperref} % 超链接
+\usepackage[colorlinks=true,allcolors=blue]{hyperref} % 超链接
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
-\usepackage{tcolorbox}
+\usepackage{xcolor}
 \usepackage{minted}
+\usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 
@@ -22,7 +19,7 @@
 \begin{tcolorbox}[
          colback=red!5!white,
          colframe=teal,
-         title=\textbf{hyperref url}
+         title=\textbf{graphicx input a image}
     ]
 \begin{minted}[mathescape,
                linenos,
@@ -30,18 +27,20 @@
                gobble=0,
                frame=lines,
                framesep=2mm]{tex}
-\usepackage[colorlinks=true,
-            allcolors=blue
-           ]{hyperref}
+\usepackage{graphicx}
 
-\url{www.baidu.com}
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{./demo.jpg}
+\caption{This is a image}
+\end{figure}
 \end{minted}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
          colback=red!5!white,
          colframe=teal,
-         title=\textbf{hyperref href}
+         title=\textbf{graphicx input images}
     ]
 \begin{minted}[mathescape,
                linenos,
@@ -49,13 +48,30 @@
                gobble=0,
                frame=lines,
                framesep=2mm]{tex}
-\usepackage[colorlinks=true,
-            allcolors=blue
-           ]{hyperref}
+\usepackage{graphicx}
+\usepackage{subfigure}
 
-\href{www.baidu.com}{百度}
+\begin{figure}[htbp]
+    \centering
+    \subfigure[name1]{
+        \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[scale=0.3]{./demo1.png}
+        \end{minipage}
+    }
+    \subfigure[name2]{
+        \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[width=5.5cm]{./demo2.png}
+        \end{minipage}
+    }
+    \caption{Two images}
+\end{figure}
+
 \end{minted}
 \end{tcolorbox}
 
 
 \end{document}
+
+
