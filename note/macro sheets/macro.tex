@@ -3,13 +3,13 @@
 \usepackage{array}
 \usepackage{amsmath, mathrsfs, amsfonts}
 \usepackage{amssymb}
-\usepackage[
-      colorlinks=true,
-            linkcolor=Navy,
-            urlcolor=Navy,
-            citecolor=Navy,
-            anchorcolor=Navy
-]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
 \usepackage{xcolor}
@@ -19,31 +19,34 @@
 
 
 \begin{document}
+CTAN: \url{https://ctan.org}
+
 \begin{table}[htpb]
     \centering
     \caption{宏包列表}
-    \begin{tabular}{c|l}
+    \begin{tabular}{|c|p{6cm}|l|}
     \hline
-    macro & explain \\\hline
-    hyperref & 超链接 \\\hline
-    graphicx & 插图 \\\hline
-    amsmath & 数学公式 \\\hline
-    fancyhdr & 页眉页脚 \\\hline
-    enumitem & 列表 \\\hline
-    geometry & 页面布局 \\\hline
-    ragged2e & 段落对齐方式 \\\hline
-    multirow & 纵向合并单元格 \\\hline
-    booktabs & 三线表 \\\hline
-    diagbox & 表头斜线 \\\hline
-    colortbl & 彩色的单元格和表线 \\\hline
-    longtable & 跨页表格 \\\hline
-    supertabular & 跨页表格 \\\hline
-    physics & 公式输入便捷命令 \\\hline
-    tcolorbox & 高度可配置的彩色盒子 \\\hline
-    minted & 代码快 \\\hline
-    watermark & 页面水印 \\\hline
-    multicol & 多栏模式 \\\hline
-    amssymb & 更多公式符号 \\\hline
+    \textbf{macro} & \multicolumn{1}{c|}{\textbf{explain}} & \multicolumn{1}{c|}{\textbf{net}} \\\hline
+    \hline
+    hyperref & 超链接 & \href{../hyperref/hyperref.pdf}{hyperref.pdf}  \\\hline
+    graphicx & 插图 & \href{../graphicx/graphicx.pdf}{graphicx.pdf} \\\hline
+    amsmath & 数学公式 & \\\hline
+    fancyhdr & 页眉页脚 & \\\hline
+    enumitem & 列表 & \\\hline
+    geometry & 页面布局 & \\\hline
+    ragged2e & 段落对齐方式 & \\\hline
+    multirow & 纵向合并单元格 & \\\hline
+    booktabs & 三线表 & \\\hline
+    diagbox & 表头斜线 & \\\hline
+    colortbl & 彩色的单元格和表线 & \\\hline
+    longtable & 跨页表格 & \\\hline
+    % supertabular & 跨页表格 \\\hline
+    physics & 公式输入便捷命令 & \\\hline
+    tcolorbox & 高度可配置的彩色盒子 & \href{../tcolorbox/tcolorbox.pdf}{tcolorbox.pdf}\\\hline
+    minted & 代码快 & \href{../minted/minted.pdf}{minted.pdf}\\\hline
+    watermark & 页面水印 & \\\hline
+    % multicol & 多栏模式 \\\hline
+    amssymb & 更多公式符号 & \\\hline
     \hline
     \end{tabular}
 \end{table}
