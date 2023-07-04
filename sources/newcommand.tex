@@ -1,0 +1,37 @@
+%*******************************************
+% Author:      lcdse7en                    *
+% E-mail:      2353442022@qq.com           *
+% Date:        2023-05-04                  *
+% Description:                             *
+%*******************************************
+
+\newcommand{\imp}[1]{\underline{\textit{#1}}}  % 下划线强调
+
+
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+% for check symbol
+% \usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+% Bibnatg Commands
+\newcommand{\hlmath}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
+\newcommand{\hltext}[2]{\colorbox{#1!17}{#2}}
+
+
+
+
+
+% \begin{itemize}
+% 	\item 2019年9月30日计划
+% 	\begin{todolist}
+% 		\item [\wontfix] 休息休息
+% 		\item [\done] 吃饭
+% 		\item [\done] 学习
+% 		\item 8点开始学习。
+% 		\item 待完成。。。
+% 	\end{todolist}
+% \end{itemize}

@@ -1,0 +1,54 @@
+% Chinese
+\setmainfont{Times New Roman}
+\defaultCJKfontfeatures{Scale=0.9}
+\setCJKmainfont[ItalicFont={KaiTi}, BoldFont={Microsoft YaHei}]{KaiTi} %衬线字体 缺省中文字体为宋体
+\setCJKsansfont{Microsoft YaHei} %serif是有衬线字体sans serif无衬线字体。
+\setCJKmonofont{FangSong} %中文等宽字体
+
+% Korea
+% \setCJKfamilyfont{korm}{Gowun Batang}
+\setCJKfamilyfont{korm}{NanumMyeongjo}
+\newcommand\krt{\CJKfamily{korm}\CJKspace\footnotesize} % footnotesize small normalsize
+\newcommand\kr{\CJKfamily{korm}\CJKspace\normalsize} % footnotesize small normalsize
+
+%  NOTE:  XeLaTeX 下需要把全体带圈数字都设置成 Default 类
+\xeCJKDeclareCharClass{Default}{"24EA, "2460->"2473, "3251->"32BF}
+\newfontfamily\EnclosedNumbers{Source Han Serif CN} % NOTE: adobe
+\AtBeginUTFCommand[\textcircled]{\begingroup\EnclosedNumbers}
+\AtEndUTFCommand[\textcircled]{\endgroup}
+
+%--------------------添加本地系统内的中文字体---------------------
+\setCJKfamilyfont{song}{SimSun}           % 宋体
+\newcommand{\song}{\CJKfamily{song}}      % 宋体
+\setCJKfamilyfont{kaiti}{KaiTi}           % 楷体
+\newcommand{\kaiti}{\CJKfamily{kaiti}}    % 楷体
+\setCJKfamilyfont{fsong}{FangSong}        % 仿宋
+\newcommand{\fsong}{\CJKfamily{fsong}}    % 仿宋
+\setCJKfamilyfont{hei}{SimHei}            % 黑体
+\newcommand{\hei}{\CJKfamily{hei}}        % 黑体
+\setCJKfamilyfont{yh}{Microsoft YaHei}    % 微软雅黑
+\newcommand{\yh}{\CJKfamily{yh}}          % 微软雅黑
+
+%------------------------------设置字体大小------------------------
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     %初号
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} %小初号
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      %一号
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      %二号
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  %小二号
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  %三号
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      %四号
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  %小四号
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    %五号
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   %小五号
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  %六号
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    %七号
+
+%------------------------------标题名称中文化---------------------
+\renewcommand\abstractname{\kaiti 摘\ 要}
+\renewcommand\abstracttextfont{\kaiti}
+\setlength\absleftindent{0pt}
+\setlength\absrightindent{0pt}
+\setlength{\abstitleskip}{-1.5em} % 调整摘要与正文之间的距离，默认为上下加runin参数后变为左右距离
+\abslabeldelim{：}
+
+\renewcommand\figurename{\hei 图}

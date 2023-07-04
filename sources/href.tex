@@ -1,0 +1,18 @@
+%*******************************************
+% Author:      lcdse7en                    *
+% E-mail:      2353442022@qq.com           *
+% Date:        2023-05-04                  *
+% Description:                             *
+%*******************************************
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor = black, % 目录颜色
+    urlcolor=Blue,
+    citecolor=Cyan,
+    filecolor=Green,
+    pdfview=XYZ,
+}
+
+\let\oldhref\href
+\renewcommand{\href}[3][blue]{\oldhref{#2}{\color{#1}{#3}}}

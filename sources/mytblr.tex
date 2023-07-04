@@ -1,0 +1,45 @@
+% --------------------------------------------------------
+% ----------- setting Table environment start --------------
+% --------------------------------------------------------
+\NewTblrEnviron{mytblr}
+\SetTblrOuter[mytblr]{long}
+\SetTblrInner[mytblr]{
+	width = 0.99\linewidth,
+	rowhead = 1,
+	verb,
+	row{odd} = {bg=mypink},
+	row{1} = {bg=myteal, fg=white},
+}
+
+
+\SetTblrInner[longtblr]{
+	cells = {font=\small},
+	rowhead = 1,
+	cell{1}{-} = {fg=white, bg=gray, font=\bfseries\kaiti\small}
+}
+
+\SetTblrStyle{caption, note, remark}{font=\small}
+\SetTblrStyle{caption-tag}{red2}
+\SetTblrStyle{firstfoot, middlefoot, lastfoot}{fg=blue2, font=\kaiti\small}
+\SetTblrStyle{firsthead, middlehead, lasthead}{font=\bfseries\kaiti\small}
+
+\UseTblrLibrary{counter}
+\newcounter{mycnta}
+\newcommand{\mycnta}{\stepcounter{mycnta}\arabic{mycnta}}
+\counterwithin{mycnta}{table} % page\ table
+\renewcommand\themycnta{\arabic{mycnta}}
+
+\NewTableCommand\myhline{\hline[0.2em,black]}
+
+\DeclareTblrTemplate{caption-sep}{default}{\enskip}
+\DeclareTblrTemplate{contfoot-text}{default}{(接下页)}
+\DeclareTblrTemplate{conthead-text}{default}{(续前表)}
+
+
+\UseTblrLibrary{booktabs} % 三线表库 \toprule \midrule \bottomrule \cmidrule
+\UseTblrLibrary{amsmath}
+\UseTblrLibrary{diagbox} % 斜线标头库 \diagbox{}{} \diagboxthree{}{}{}
+\UseTblrLibrary{siunitx}
+% --------------------------------------------------------
+% ----------- setting Table environment end --------------
+% --------------------------------------------------------

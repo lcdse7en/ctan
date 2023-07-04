@@ -1,0 +1,130 @@
+
+%*******************************************
+% Author:      se7enlcd                    *
+% E-mail:      2353442022@qq.com           *
+% Date:        2023-06-02                  *
+% Description:                             *
+%*******************************************
+
+
+\documentclass[a4paper, 10pt]{report}
+\usepackage[hyperref=true, backend=bibtex, sorting=none, backref=true]{biblatex} %style=authoryear-icomp
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage[a4paper, left=1.5cm, right=1cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{tocloft} % 目录设置宏包
+\usepackage{enumerate}
+\usepackage{fontspec, xunicode-addon} % 显示中文、韩文(CJK)字符
+\usepackage[utf8]{inputenc}
+\usepackage{kotex} % korea font space
+\usepackage{multicol}
+\usepackage{verse} % 诗歌
+\usepackage[fleqn]{amsmath}
+\usepackage{etoolbox}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont} % \ding{51}
+\usepackage[runin]{abstract}
+\usepackage{lipsum} % 插入例子
+\usepackage{xifthen}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tasks}
+\usepackage{graphicx}
+\usepackage{tabularray}
+\usepackage[slantfont, boldfont]{xeCJK}
+\usepackage{titling}
+\usepackage[explicit]{titlesec}
+\usepackage{metalogo}
+\usepackage{chngcntr}
+\usepackage{fontawesome5}
+\usepackage{IEEEtrantools}
+\usepackage{newclude}
+\usepackage{minted} % sudo pip install pygments % --shell-escape
+\usepackage[titletoc]{appendix} % 附录
+\usepackage{todonotes} % 批注将来需要做的事项
+\usepackage[noautomatic]{imakeidx} % 关键字索引 导言区\index{}
+\usepackage[totoc, hangindent=2em, subindent=0.8em, initsep=12pt, font=small, unbalanced=true]{idxlayout}
+\usepackage{pst-plot}
+\usepackage[customcolors, shade]{hf-tikz}
+\usetikzlibrary{tikzmark}
+\usepackage{tkz-euclide}
+\usepackage{codebox}
+\usepackage{fancyhdr} % 设置页眉、页脚
+\usepackage{lastpage} % 显示总页数
+\usepackage{afterpage}
+\usepackage{hyperref} % 此宏包必须最后导入才能跳转到引用位置
+
+\usemintedstyle{xcode}
+
+% --------------------------------------------------------
+% -------------- input sources file begin ----------------
+% --------------------------------------------------------
+\input{sources/font}
+\input{sources/format}
+\input{sources/mypagestyle}
+\input{sources/enumitem}
+\input{sources/newcommand}
+\input{sources/tasks}
+\input{sources/png}
+\input{sources/graphics}
+\input{sources/defcolor}
+\input{sources/mytblr}
+\input{sources/href}
+\input{sources/tcolorbox}
+\input{sources/entry}
+\input{sources/attrib}
+\input{sources/multicol}
+\input{sources/bib}
+\input{sources/makeindex}
+% --------------------------------------------------------
+% --------------- input sources file end -----------------
+% --------------------------------------------------------
+
+% ---------------- begin document start ------------------
+\begin{document}
+
+\pagestyle{mypagestyle}
+
+\input{sources/author-title} % 封面页面
+
+\thispagestyle{empty}
+\afterpage{\thispagestyle{plain}}
+\renewcommand{\thepage}{\Roman{page}}
+\setcounter{page}{1}
+\tableofcontents
+
+\clearpage
+\listoftables % 表格目录
+
+\clearpage
+\listoffigures % 图片目录
+
+%\listoftodos
+\newpage
+
+%\input{sources/basic-info}
+%\input{sources/abstract}
+
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+
+%--------- 前言 ---------
+% \input{documents/preface}
+
+\input{documents/xcolor}
+\input{documents/fontawesome5}
+
+
+%\cite{texbook1986} %\nocite{*}
+%-------------------- 打印文献 start --------------------
+\printbibliography[title={\kaiti 参考文献}, sorting=nyt] % 打印参考文献
+\addcontentsline{toc}{chapter}{参考文献}
+%-------------------- 打印文献 end ----------------------
+
+%---------------------- 附录 start ----------------------
+\input{sources/appendices}
+%---------------------- 附录 end ------------------------
+
+% 打印关键字索引
+\printindex % \index{}
+\end{document}

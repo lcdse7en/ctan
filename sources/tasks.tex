@@ -1,0 +1,15 @@
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)
+		circle (.5em) node {\makebox[1em][c]{\small #1}};
+	}}
+\robustify{\circled}
+\NewTasksEnvironment[style=enumerate,
+	label=$\Alph*$.,
+	label-width=13pt,
+	after-item-skip=0ex
+]{choice}[\item]
+\NewTasksEnvironment[style=enumerate,
+	% label=\large\protect\textcircled{\arabic*},
+	label=\circled{\arabic*},
+	label-width=12pt,
+	after-item-skip=0ex
+]{stage}[\item]

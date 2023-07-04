@@ -1,0 +1,172 @@
+\newtcbox{\xmybox}[1][red]{
+	on line,
+	arc=6pt,
+	colback=#1!10!white,
+	colframe=#1!50!black,
+	before upper={\rule[-1.5pt]{0pt}{10pt}},
+	boxrule=1pt,
+	boxsep=0pt,
+	left=8pt,
+	right=8pt,
+	top=1pt,
+	bottom=1pt
+}
+
+% 两列以及同高度的tcolorbox
+\newtcolorbox{mybox2}[2]{
+	width=(\linewidth-2mm)/2,
+	nobeforeafter,
+	arc=1mm,
+	coltitle=black,            % title字体颜色
+	colbacktitle=red!50!white, % title背景颜色
+	colback=yellow!50!red!25!white, % 内容背景颜色
+	colframe=blue!75!black,    % 边框颜色
+	fonttitle=\bfseries,
+	fonttitle=\kaiti,
+	fontupper=\kaiti,
+	left=2mm, % 内容与左边边框的间距
+	right=2mm,
+	top=1mm,
+	bottom=1mm,
+	title= #1,
+	equal height group=#2,    % parbox
+}
+
+
+\newtcblisting[auto counter]{mypython}[1]{
+	minted style=xcode,
+	minted language=python,
+	listing engine=minted,
+	minted options={
+			linenos,
+			autogobble,
+			% gobble=2,
+			mathescape,
+			fontsize=\small,   % large, normalsize, small, footnotesize
+			breaklines,
+			highlightcolor=yellow!50,
+			% #2,  % highlightlines={1,4},
+			bgcolor=mygray,
+			numbersep=3mm
+		},
+	colback=yellow!5,
+	colframe=yellow!50!black,
+	% fonttitle=\bfseries,
+	listing only,
+	left=5mm,
+	enhanced,
+	overlay={\begin{tcbclipinterior}\fill[red!10!blue!13!white] (frame.south west)
+				rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}},
+	title={\textcolor{yellow}{\bfseries Code \thetcbcounter:} #1},
+	top=0mm,
+	bottom=0mm,
+	after title=\hfill\textcolor{red}{\faIcon{python}PYTHON}
+}
+
+
+\newtcblisting[auto counter]{mytex}[1]{
+	listing engine=minted,
+	minted style=xcode,
+	minted language=latex,
+	minted options={
+			linenos,
+			autogobble,
+			% gobble=2,
+			mathescape,
+			fontsize=\small,   % large, normalsize, small, footnotesize
+			breaklines,
+			highlightcolor=yellow!50,
+			% #2,  % highlightlines={1,4},
+			bgcolor=mygray,
+			numbersep=3mm
+		},
+	colback=yellow!5,
+	colframe=yellow!50!black,
+	% fonttitle=\bfseries,
+	listing only,
+	left=5mm,
+	enhanced,
+	overlay={\begin{tcbclipinterior}\fill[red!10!blue!13!white] (frame.south west)
+				rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}},
+	title={\textcolor{yellow}{\bfseries Code \thetcbcounter:} #1},
+	top=0mm,
+	bottom=0mm,
+	after title=\hfill \textcolor{black}{\faIcon{pen-nib} LaTex}
+}
+
+
+
+\newtcblisting[auto counter]{mysh}[1]{
+	listing engine=minted,
+	minted style=xcode,
+	minted language=shell,
+	minted options={
+			linenos,
+			autogobble,
+			% gobble=2,
+			mathescape,
+			fontsize=\small,   % large, normalsize, small, footnotesize
+			breaklines,
+			highlightcolor=yellow!50,
+			% #2,  % highlightlines={1,4},
+			bgcolor=mygray,
+			numbersep=3mm
+		},
+	colback=yellow!5,
+	colframe=yellow!50!black,
+	% fonttitle=\bfseries,
+	listing only,
+	left=5mm,
+	enhanced,
+	overlay={\begin{tcbclipinterior}\fill[red!10!blue!13!white] (frame.south west)
+				rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}},
+	title={\textcolor{yellow}{\bfseries Code \thetcbcounter:} #1},
+	top=0mm,
+	bottom=0mm,
+	after title=\hfill \textcolor{black}{\faIcon{terminal} Shell}
+}
+
+
+\newcounter{filePrg}
+\newtcbinputlisting[use counter=filePrg, number within=chapter, list inside=mypyg]{\inputcodefile}[5]{
+	listing engine=minted,
+	minted style=xcode,
+	minted language=#1,
+	listing file={#2},
+	minted options={
+			linenos,
+			% bgcolor=mygray,
+			fontsize=\small,   % large, normalsize, small, footnotesize
+			breaklines,
+			autogobble,
+			numbersep=3mm,
+			mathescape,
+		},
+	breakable,
+	arc=1.5mm,
+	colframe=brown,
+	% colback=yellow!5,
+	coltitle=White,
+	coltext=Black,
+	listing only,
+	size=title,
+	% drop fuzzy shadow,
+	left=5mm,
+	enhanced,
+	% overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+	% 			rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}},
+	top=0mm,
+	bottom=0mm,
+	interior style={
+			fill overzoom image=images/#5,
+			fill image opacity=0.49,
+		},
+	% frame style image=001.jpeg,
+	% watermark text app={\textit{Se7en}},
+	% watermark color=Navy,
+	% watermark opacity=0.10,
+	title={\textcolor{yellow}{\bfseries Listing \thetcbcounter:} #3},
+	list entry=Listing~\thetcbcounter : #3,
+	after title=\hfill \textcolor{black}{\faIcon{pen-nib} #4},
+	% label=lst:#4
+}

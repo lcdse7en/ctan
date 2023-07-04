@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{k}{\PYGZbs{}usepackage}[colorlinks=true,
-            allcolors=blue
-           ]\PYG{n+nb}{\PYGZob{}}hyperref\PYG{n+nb}{\PYGZcb{}}
-
-\PYG{k}{\PYGZbs{}url}\PYG{n+nb}{\PYGZob{}}www.baidu.com\PYG{n+nb}{\PYGZcb{}}
-\end{Verbatim}

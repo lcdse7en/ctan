@@ -1,0 +1,32 @@
+%*******************************************
+% Author:      lcdse7en                    *
+% E-mail:      2353442022@qq.com           *
+% Date:        2023-05-04                  *
+% Description:                             *
+%*******************************************
+
+% latex内置了四种页眉、页脚的样式：empty(没有页眉和页脚)、plain(没有页眉，页脚中部放置页码)、headings(没有页脚，页眉包含章节的标题和页码)
+% \usepackage{fancyhdr} 自定义页眉和页脚
+\fancypagestyle{mypagestyle}{        % RO: 右边奇数页 ;LE：左边偶数页
+	\fancyhead{}
+	\fancyfoot{}
+	% renewcommand{\thepage}{\arabic{page}} % part chapter section equation page figure table
+	% setcount{page}{1}
+	\fancyhead[LE,RO]{\thepage}
+	\fancyhead[RE]{\leftmark}          % 获取当前页所在章的标题
+	\fancyhead[LO]{\rightmark}         % 获取当前页所在节的标题
+	\fancyfoot[CO,CE]{\thepage / \pageref{LastPage}} % 获取最后一页的页码(需要\usepackage{lastpage}宏包)
+	\renewcommand{\headrulewidth}{0.8pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{plain}{        % RO: 右边奇数页 ;LE：左边偶数页
+	\fancyhead{}
+	\fancyfoot[CO, CE]{\thepage}
+	% renewcommand{\thepage}{\arabic{page}} % part chapter section equation page figure table
+	% setcount{page}{1}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+
+\setlength\headwidth{\textwidth}

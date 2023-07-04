@@ -1,0 +1,84 @@
+% 章节标题格式设置
+\titleformat
+{\chapter}                  % 章节命令
+% [display]                 % shape
+{\kaiti\LARGE\centering\color{black}}  % 章节字体格式
+{第 \thechapter 章}                          % 章节数字前缀
+{0.5ex}                       % 前缀与题目之间的间距
+{#1}                          % 设置题目本身格式
+[]         % 章节后缀(后最内容会出现在章节的下方)
+
+\titleformat
+{\section}                  % 章节命令
+{\kaiti\Large\raggedright\color{BrickRed}}  % 章节字体格式
+{\faIcon{toggle-on}}                          % 章节数字前缀
+{5pt}                       % 前缀与题目之间的间距
+{#1  \textcolor{black}{\faIcon{github}} \textcolor{blue}{\faIcon{code}} \textcolor{black}{\faIcon{pen-nib}} \textcolor{red}{\faIcon{terminal}}}                          % 设置题目本身格式
+[{\titlerule[2pt]}]         % 章节后缀(后最内容会出现在章节的下方)
+
+
+\titleformat
+{\subsection}                  % 章节命令
+{\kaiti\large\raggedright\color{RoyalBlue}}  % 章节字体格式
+{\faIcon{tag}}                          % 章节数字前缀
+{5pt}                       % 前缀与题目之间的间距
+{#1}                          % 设置题目本身格式
+%[{\titlerule[2pt]}]         % 章节后缀(后最内容会出现在章节的下方)
+
+
+% ------------ 目录格式设置 -------------
+% \usepackage{tocloft}
+% TOC title name chage
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{1.8cm}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\cfttoctitlefont}{\kaiti \huge \bfseries \hfill} % content 居中对齐
+\renewcommand{\cftaftertoctitle}{\hfill \kaiti} % content 居中对齐
+
+% contents table name chage
+\renewcommand{\cftbeforelottitleskip}{0pt}
+\renewcommand{\cftafterlottitleskip}{1.8cm}
+\renewcommand{\listtablename}{表格目录}
+\renewcommand{\cftlottitlefont}{\kaiti \huge \hfill \bfseries} % content 居中对齐
+\renewcommand{\cftafterlottitle}{\hfill \kaiti} % content 居中对齐
+\renewcommand{\cfttabindent}{0pt} % table 缩进
+
+% contents figure name chage
+\renewcommand{\cftbeforeloftitleskip}{0pt}
+\renewcommand{\cftafterloftitleskip}{1.8cm}
+\renewcommand{\listfigurename}{图片目录}
+\renewcommand{\cftloftitlefont}{\kaiti \huge \hfill \bfseries} % content 居中对齐
+\renewcommand{\cftafterloftitle}{\hfill \kaiti} % content 居中对齐
+\renewcommand{\cftfigindent}{0pt} % figure 缩进
+
+%------------- chapter 格式设置 ----------
+\renewcommand{\cftbeforechapskip}{10pt}
+\renewcommand{\cftchapfont}{\large \kaiti\bfseries}     % chapter 格式设置
+\renewcommand{\cftchappresnum}{第}     % chapter 格式设置
+\renewcommand{\cftchapaftersnum}{章}     % chapter 格式设置
+% \renewcommand{\cftchapaftersnumb}{\newline}     % chapter 格式设置
+\renewcommand{\cftchapnumwidth}{1.8cm}     % chapter 格式设置
+
+
+%------------- section 格式设置 ----------
+\renewcommand{\cftsecfont}{\normalsize}     % section 格式设置
+\renewcommand{\cftsecindent}{0.74cm}
+\renewcommand{\cftsecnumwidth}{1.05cm}     % section 格式设置
+
+%------------- subsection 格式设置 ----------
+\renewcommand{\cftsubsecindent}{1.65cm}
+\renewcommand{\cftsubsecnumwidth}{1cm}     % section 格式设置
+\renewcommand{\cftsubsecfont}{\normalsize}     % subsection 格式设置
+
+
+% 目录深度4, 从0开始
+\setcounter{tocdepth}{3}
+
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftchapleader}{
+	% \renewcommand{\cftdot}{-}
+	\cftdotfill{\cftchapdotsep}
+}
+
+\renewcommand{\cftfigindent}{0pt}
+\renewcommand{\cftpnumalign}{c}

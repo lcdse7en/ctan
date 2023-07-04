@@ -1,0 +1,29 @@
+% Making the \entry command
+\newcommand{\entry}[4]{
+	\ifthenelse{\isempty{#3}}
+	{\slimentry{#1}{#2}}{
+
+		\begin{minipage}[t]{.15\linewidth}
+			\hfill \textsc{#1}
+		\end{minipage}
+		\hfill\vline\hfill
+		\begin{minipage}[t]{.78\linewidth}
+			% {\bf#2}\\\textit{#3} \footnotesize{#4}
+			% large normalsize small footnotesize
+			% DarkOliveGreen LightSlateGrey DarkCyan
+			{\bf#2}\\\small\textcolor{DarkCyan}{#3} \small{#4}
+		\end{minipage}\\
+		\vspace{.25cm}
+	}}
+
+\newcommand{\slimentry}[2]{
+
+	\begin{minipage}[t]{.15\linewidth}
+		\hfill \textsc{#1}
+	\end{minipage}
+	\hfill\vline\hfill
+	\begin{minipage}[t]{.78\linewidth}
+		\small#2
+	\end{minipage}\\
+	\vspace{.25cm}
+}% end \entry command definition

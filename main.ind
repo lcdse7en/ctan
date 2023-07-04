@@ -1,0 +1,9 @@
+\begin{theindex}
+  \def\seename{见}
+  \def\alsoname{又见}
+  \providecommand*\indexgroup[1]{%
+    \indexspace
+    \item \textbf{#1}\nopagebreak}
+
+
+\end{theindex}

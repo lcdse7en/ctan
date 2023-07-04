@@ -1,0 +1,30 @@
+
+%*******************************************
+% Author:      lcdse7en                    *
+% E-mail:      2353442022@qq.com           *
+% Date:        2023-05-04                  *
+% Description:                             *
+%*******************************************
+
+
+\begin{titlepage}
+	\thispagestyle{empty}
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[fill=mypage] (current page.north west) rectangle (current page.south east);
+
+		\node[anchor=north west, xshift=-0.1cm, yshift=1cm] (bg) at (current page.north west) {\includegraphics[width=\paperwidth, height=15cm]{title1.jpeg}};
+
+		\node[anchor=west, text width=\textwidth, color=white, below=of bg] (title) {\LARGE\kaiti LaTex};
+
+		\node[inner sep=0.25cm, text width=25cm, color=white, below=of title, fill=white, text=black!70, yshift=-1cm] at
+		(current page.east) (subtitle) {\LARGE\kaiti\bfseries CTAN Packages};
+
+
+		\node[anchor=west, text width=\textwidth, color=white, below=of title, yshift=-6cm] (date) {\LARGE\today};
+		\node[anchor=west, text width=\textwidth, color=white, below=of date] (add) {\LARGE Shenzhen, China};
+
+		\node[fill=white, draw=white, minimum width=7cm, below=of add, anchor=west] at (add.west) (line) {};
+
+		\node[anchor=west, text width=\textwidth, color=white, below=of line, anchor=west] at (line.west) (author) {\LARGE Authored By: Se7enlcd};
+	\end{tikzpicture}
+\end{titlepage}
